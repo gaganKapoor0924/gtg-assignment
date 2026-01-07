@@ -1,3 +1,28 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".mobile_menu svg");
+  const mobileMenu = document.querySelector(".mobile_content");
+  const closeBtn = document.querySelector(".close");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+  });
+
+  // Optional: close menu when clicking any link
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+  });
+
+    closeBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+  });
+
+});
+
+
+
+
 const subscriptions = document.querySelectorAll(".subscription");
 
 const cartState = {

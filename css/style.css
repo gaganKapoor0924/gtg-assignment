@@ -61,6 +61,39 @@ header .top_header {
 .content nav ul li a svg {
   height: 18px;
 }
+.search_section{
+  display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.mobile_content{
+  background: #fff;
+  position: fixed;
+  width:100%;
+  height: 100dvh;
+  top:0;
+  left:0;
+  padding:20px;
+  z-index: 999;
+  opacity: 0;
+  
+}
+.mobile_content .mobile_list{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+}
+.mobile_content .mobile_list li a{
+  text-decoration: none;
+  color:#032E15;
+}
+.mobile_content .mobile_list li svg{
+  width:15px;
+}
+.mobile_menu{
+  display: none;
+}
 
 .btn {
   background: linear-gradient(top, #032E15, #016630);
@@ -713,7 +746,42 @@ header .top_header {
   padding-top: 16px;
 }
 
+
+
 @media screen and (min-width:360px) and (max-width:1023px) {
+  .mobile_menu{
+    display: block;
+
+  }
+  .mobile_content.active{
+    display: block;
+  }
+
+  .mobile_content {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  width:80%;
+}
+
+.mobile_content .close{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mobile_content .close svg{
+  width:20px;
+}
+
+.mobile_content.active {
+  transform: translateX(0%);
+  transition: transform 0.3s ease-in-out;
+  opacity:1;
+}
+
+  .mobile_menu svg{
+    width:20px;
+  }
   .content nav{
     display: none;
   }
